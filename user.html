@@ -1,0 +1,41 @@
+<div style="display: flex;flex-direction: column; justify-content: center; align-items: center">
+
+        <a href="#!/main">Main</a>
+        <h3>UserName: {{person.firstName}}</h3>
+        <img
+
+                ng-src="{{person.imgSrc}}"
+                width="200px"
+                height="200px"
+                alt="{{person.firstName}}"
+        />
+        <div>
+            Order:
+            <select ng-model="orderAsc">
+                <option value="+name">Name</option>
+                <option value="-stargazers_count">Count</option>
+                <option value="+language">Language</option>
+            </select>
+        </div>
+    </div>
+
+
+
+      <table style="padding-right: 50px; padding-top: 50px;" >
+        <thead >
+          <tr>
+            <th style="width: 100px">Name</th>
+            <th style="width: 100px">Stars</th>
+            <th style="width: 100px">Language</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="repo in repos | orderBy:orderAsc">
+            <td align="center">
+                <a href="#!repo/{{person.login}}/{{repo.name}}">{{repo.name}}</a>
+                </td>
+            <td align="center">{{repo.stargazers_count | number}}</td>
+            <td align="center">{{repo.language}}</td>
+          </tr>
+        </tbody>
+      </table>

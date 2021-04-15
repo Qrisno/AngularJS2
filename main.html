@@ -1,0 +1,15 @@
+<div >
+    <h1 ng-show='count'>{{count}}</h1>
+    <form ng-submit="search(username)">
+        <div>{{username}}</div>
+        <input
+                required
+                type="search"
+                placeholder="username"
+                ng-model="username"
+        />
+        <input type="submit" />
+    </form>
+<!--    <div style="color: red; padding-top: 10px">{{error}}</div>-->
+<!--    <div ng-include="'user.html'" ng-show='person'></div>-->
+</div>
